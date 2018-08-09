@@ -2,13 +2,13 @@
 #include "menu.h"
 
 using namespace std;
+using namespace sf;
 
-
-void EndOfGame()
+void EndOfGame(RenderWindow  okno)
 {
 
 
 
 
-
+ okno.display();
 }

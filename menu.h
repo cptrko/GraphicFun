@@ -3,9 +3,9 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-
+using namespace sf;
 void menu();
-void EndOfGame();
+void EndOfGame(RenderWindow  okno);
 
 
 #endif // MENU_H_INCLUDED
