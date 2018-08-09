@@ -7,9 +7,11 @@ using namespace sf;
 int main()
 {
     RenderWindow window(VideoMode(640, 480), "SFML works!");
-    CircleShape shape(100.f);
-    shape.setFillColor(Color::Green);
+    Texture tapeta;
+    tapeta.loadFromFile( "tlo.jpg" );
 
+    sf::Sprite obrazek;
+    obrazek.setTexture( tapeta );
     while (window.isOpen())
     {
         Event event;
@@ -20,7 +22,7 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        window.draw(obrazek);
         window.display();
     }
 
