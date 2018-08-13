@@ -31,7 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Menu-EOG.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

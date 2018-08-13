@@ -7,5 +7,4 @@ using namespace sf;
 void menu();
 void EndOfGame(RenderWindow  okno);
 
-
 #endif // MENU_H_INCLUDED

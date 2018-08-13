@@ -17,6 +17,28 @@ int main()
         Event event;
         while (window.pollEvent(event))
         {
+
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::F )
+                {
+                window.close();
+                window.create(VideoMode(640, 480), "SFML works!l", Style::Fullscreen );
+
+                window.clear();
+                window.draw(obrazek);
+                window.display();
+                }
+                if( event.type == Event::KeyPressed && event.key.code == Keyboard::O)
+                {
+                window.close();
+                window.create(VideoMode(640, 480), "SFML works!l");
+
+                window.clear();
+                window.draw(obrazek);
+                window.display();
+                }
+        if( event.type == Event::KeyPressed && event.key.code == Keyboard::Escape )
+                 window.close();
+
             if (event.type == Event::Closed)
                 window.close();
         }
