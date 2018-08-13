@@ -8,9 +8,21 @@ int main()
 {
     RenderWindow window(VideoMode(640, 480), "SFML works!");
     Texture tapeta;
-    tapeta.loadFromFile( "tlo.jpg" );
+    tapeta.loadFromFile( "icon/tlo.jpg" );
 
-    sf::Sprite obrazek;
+
+    Texture start, menu, wyjscie;
+    start.loadFromFile("icon/start.png");
+    menu.loadFromFile("icon/menu.png");
+    wyjscie.loadFromFile("icon/exit.png");
+
+
+    Sprite s_start,s_menu, s_wyjscie;
+    s_start.setTexture(start);
+    s_menu.setTexture(menu);
+    s_wyjscie.setTexture(wyjscie);
+
+    Sprite obrazek;
     obrazek.setTexture( tapeta );
     while (window.isOpen())
     {
@@ -42,9 +54,17 @@ int main()
             if (event.type == Event::Closed)
                 window.close();
         }
-
         window.clear();
+        s_start.setPosition(100,180);
+        s_start.setScale(0.17,0.17);
+        s_menu.setPosition(280,180);
+        s_menu.setScale(0.2,0.2);
+        s_wyjscie.setPosition(460,180);
+        s_wyjscie.setScale(0.2,0.2);
         window.draw(obrazek);
+        window.draw(s_start);
+        window.draw(s_menu);
+        window.draw(s_wyjscie);
         window.display();
     }
 
