@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "menu.h"
+#include <SFML/Audio.hpp>
 
 using namespace std;
 using namespace sf;
@@ -30,8 +31,17 @@ int main()
     zs_wyjscie.setTexture(z_wyjscie);
     obrazek.setTexture( tapeta );
 
+
+    SoundBuffer buffer_button;
+    buffer_button.loadFromFile("Click.wav");
+    Sound sound;
+    Music theme;
+    sound.setBuffer(buffer_button);
+    theme.openFromFile("Main Theme.wav");
+    theme.play();
     while (window.isOpen())
     {
+
         Event event;
         while (window.pollEvent(event))
         {
@@ -39,17 +49,28 @@ int main()
                 window.close();
 
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==2)
+                {
+                sound.play();
                 EndOfGame(window);
+                }
 
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==1)
+                {
+                sound.play();
                 settings(window,szerokosc,wysokosc);
+                }
 
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Right )
-                { zaznaczenie++;
+                {
+                    sound.play();
+                    zaznaczenie++;
                     if(zaznaczenie>2) zaznaczenie = 0;
                 }
+
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Left )
-                { zaznaczenie--;
+                {
+                    sound.play();
+                    zaznaczenie--;
                     if(zaznaczenie<0) zaznaczenie = 2;
                 }
         }

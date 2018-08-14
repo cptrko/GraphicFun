@@ -1,5 +1,5 @@
 #include "menu.h"
-
+#include <SFML/Audio.hpp>
 using namespace std;
 using namespace sf;
 
