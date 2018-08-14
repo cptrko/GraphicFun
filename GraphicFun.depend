@@ -1,15 +1,14 @@
 # depslib dependency file v1.0
-1534210185 source:/home/kawa/Workspace_C_C++/GraphicFun/main.cpp
+1534216185 source:/home/kawa/Workspace_C_C++/GraphicFun/main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"menu.h"
 
-1534210358 source:/home/kawa/Workspace_C_C++/GraphicFun/Menu-EOG.cpp
-	<iostream>
-	<SFML/System/Sleep.hpp>
+1534216136 source:/home/kawa/Workspace_C_C++/GraphicFun/Menu-EOG.cpp
 	"menu.h"
 
-1534210181 /home/kawa/Workspace_C_C++/GraphicFun/menu.h
+1534216277 /home/kawa/Workspace_C_C++/GraphicFun/menu.h
 	<iostream>
+	<SFML/System/Sleep.hpp>
 	<SFML/Graphics.hpp>
 

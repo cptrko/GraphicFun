@@ -8,8 +8,9 @@ using namespace sf;
 int main()
 {
 
+    int szerokosc = 640, wysokosc = 480;
     int zaznaczenie=1;
-    RenderWindow window(VideoMode(640, 480), "SFML works!");
+    RenderWindow window(VideoMode(szerokosc, wysokosc), "SFML works!");
 
     Texture tapeta,start, menu, wyjscie,z_start,z_menu,z_wyjscie;
     tapeta.loadFromFile( "icon/tlo.jpg" );
@@ -34,30 +35,14 @@ int main()
         Event event;
         while (window.pollEvent(event))
         {
-
-            if( event.type == Event::KeyPressed && event.key.code == Keyboard::F )
-                {
-                window.close();
-                window.create(VideoMode(640, 480), "SFML works!l", Style::Fullscreen );
-                window.clear();
-                window.draw(obrazek);
-                window.display();
-                }
-
-            if( event.type == Event::KeyPressed && event.key.code == Keyboard::O)
-                {
-                window.close();
-                window.create(VideoMode(640, 480), "SFML works!l");
-                window.clear();
-                window.draw(obrazek);
-                window.display();
-                }
-
             if (event.type == Event::Closed)
                 window.close();
 
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==2)
                 EndOfGame(window);
+
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==1)
+                settings(window,szerokosc,wysokosc);
 
             if( event.type == Event::KeyPressed && event.key.code == Keyboard::Right )
                 { zaznaczenie++;
@@ -67,7 +52,6 @@ int main()
                 { zaznaczenie--;
                     if(zaznaczenie<0) zaznaczenie = 2;
                 }
-
         }
         window.clear();
         window.draw(obrazek);
