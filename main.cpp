@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "menu.h"
 
 using namespace std;
 using namespace sf;
@@ -9,17 +10,15 @@ int main()
 
     int zaznaczenie=1;
     RenderWindow window(VideoMode(640, 480), "SFML works!");
-    Texture tapeta;
-    tapeta.loadFromFile( "icon/tlo.jpg" );
 
-    Texture start, menu, wyjscie,z_start,z_menu,z_wyjscie;
+    Texture tapeta,start, menu, wyjscie,z_start,z_menu,z_wyjscie;
+    tapeta.loadFromFile( "icon/tlo.jpg" );
     start.loadFromFile("icon/start.png");
     menu.loadFromFile("icon/menu.png");
     wyjscie.loadFromFile("icon/exit.png");
     z_start.loadFromFile("icon/start_zaznaczone.png");
     z_menu.loadFromFile("icon/menu_zaznaczone.png");
     z_wyjscie.loadFromFile("icon/exit_zaznaczone.png");
-
 
     Sprite s_start,s_menu, s_wyjscie,obrazek,zs_start,zs_menu,zs_wyjscie;
     s_start.setTexture(start);
@@ -29,6 +28,7 @@ int main()
     zs_menu.setTexture(z_menu);
     zs_wyjscie.setTexture(z_wyjscie);
     obrazek.setTexture( tapeta );
+
     while (window.isOpen())
     {
         Event event;
@@ -39,36 +39,33 @@ int main()
                 {
                 window.close();
                 window.create(VideoMode(640, 480), "SFML works!l", Style::Fullscreen );
-
                 window.clear();
                 window.draw(obrazek);
                 window.display();
                 }
-                if( event.type == Event::KeyPressed && event.key.code == Keyboard::O)
+
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::O)
                 {
                 window.close();
                 window.create(VideoMode(640, 480), "SFML works!l");
-
                 window.clear();
                 window.draw(obrazek);
                 window.display();
                 }
-        if( event.type == Event::KeyPressed && event.key.code == Keyboard::Escape )
-                 window.close();
 
-         if (event.type == Event::Closed)
+            if (event.type == Event::Closed)
                 window.close();
 
-         if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==2)
-                 window.close();
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::Return && zaznaczenie==2)
+                EndOfGame(window);
 
-          if( event.type == Event::KeyPressed && event.key.code == Keyboard::Right )
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::Right )
                 { zaznaczenie++;
-                 if(zaznaczenie>2) zaznaczenie = 0;
+                    if(zaznaczenie>2) zaznaczenie = 0;
                 }
-          if( event.type == Event::KeyPressed && event.key.code == Keyboard::Left )
+            if( event.type == Event::KeyPressed && event.key.code == Keyboard::Left )
                 { zaznaczenie--;
-                 if(zaznaczenie<0) zaznaczenie = 2;
+                    if(zaznaczenie<0) zaznaczenie = 2;
                 }
 
         }

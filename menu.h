@@ -4,7 +4,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 using namespace sf;
-void menu();
-void EndOfGame(RenderWindow  okno);
+void menu(RenderWindow okno);
+void EndOfGame(RenderWindow  &okno);
 
 #endif // MENU_H_INCLUDED
