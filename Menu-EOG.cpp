@@ -43,7 +43,7 @@ void settings(RenderWindow  &okno, int &szerokosc, int &wysokosc)
                 {
                 fullscreensensor=true;
                 okno.close();
-                okno.create(VideoMode(szerokosc, wysokosc), "SFML works!l", Style::Fullscreen );
+                okno.create(VideoMode(szerokosc, wysokosc), "I NEED A HERO", Style::Fullscreen );
                 okno.clear();
                 okno.draw(s_tapeta);
                 okno.display();
@@ -53,7 +53,7 @@ void settings(RenderWindow  &okno, int &szerokosc, int &wysokosc)
                 {
                 fullscreensensor=false;
                 okno.close();
-                okno.create(VideoMode(szerokosc, wysokosc), "SFML works!l");
+                okno.create(VideoMode(szerokosc, wysokosc), "I NEED A HERO");
                 okno.clear();
                 okno.draw(s_tapeta);
                 okno.display();
@@ -79,7 +79,7 @@ void settings(RenderWindow  &okno, int &szerokosc, int &wysokosc)
                     if(fullscreensensor)
                     {
                         okno.close();
-                        okno.create(VideoMode(szerokosc, wysokosc), "SFML works!l", Style::Fullscreen );
+                        okno.create(VideoMode(szerokosc, wysokosc), "I NEED A HERO", Style::Fullscreen );
                         okno.clear();
                         okno.draw(s_tapeta);
                         okno.display();
@@ -87,7 +87,7 @@ void settings(RenderWindow  &okno, int &szerokosc, int &wysokosc)
                     else
                     {
                         okno.close();
-                        okno.create(VideoMode(szerokosc, wysokosc), "SFML works!l");
+                        okno.create(VideoMode(szerokosc, wysokosc), "I NEED A HERO");
                         okno.clear();
                         okno.draw(s_tapeta);
                         okno.display();

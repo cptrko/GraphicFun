@@ -10,7 +10,7 @@ int main()
 
     int szerokosc = 640, wysokosc = 480;
     int zaznaczenie=1;
-    RenderWindow window(VideoMode(szerokosc, wysokosc), "SFML works!");
+    RenderWindow window(VideoMode(szerokosc, wysokosc), "I NEED A HERO");
 
     Texture tapeta,start, menu, wyjscie,z_start,z_menu,z_wyjscie;
     tapeta.loadFromFile( "icon/tlo.jpg" );
