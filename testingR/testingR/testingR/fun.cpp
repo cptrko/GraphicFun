@@ -3,13 +3,19 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 600
+#define PROP_W 4
+#define PROP_H 3
 using namespace std;
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML works!");
+	sf::RectangleShape shape;
+	shape.setSize(sf::Vector2f(PROP_W * 10, PROP_H * 10));
+	shape.setFillColor(sf::Color::Green);	
+	shape.setPosition(0, 0);
 
 	while (window.isOpen())
 	{
